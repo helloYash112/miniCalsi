@@ -2,23 +2,80 @@ import TabButton from './components/tabButton/tabButton';
 import {useState} from 'react'
 import './App.css';
 
-
+const arr=new Array();
+const opr=new Array();
+let str="";
 
 function App() {
-  const[data,getData]=useState("0");
+  const[data,getData]=useState("");
+  
   function number(datas){
-      if(data==="0"){
-         getData(datas);
-      }
-      else
+      str+=datas;
       getData(data+datas);
   }
-  
-  function calcy(operator){
-    let temp=number(data);
-
+  /*
+  function totCalcy(arrs,opr){
+    let count=0;
+    arrs.forEach(element => {
+      let nums
+      
+    });
   }
+    */
+  function calcy(oprs){
+    switch(oprs){
+      case "+" :
+        {
+           arr.push(data);
+          opr.push(oprs);
+          str+=oprs;
+          getData("");
+          break;
+        }
+        case "-" :{
+          arr.push(data);
+          opr.push(oprs);
+          str+=oprs;
+          getData("");
+          break;
+
+        }
+        case "*" :{
+          arr.push(data);
+          opr.push(oprs);
+          str+=oprs;
+          getData("");
+          break;
+
+        }
+        case "/" :{
+          arr.push(data);
+          opr.push(oprs);
+          str+=oprs;
+          getData("");
+          break;
+
+        }
+        case "=" :{
+          arr.push(data);
+          //const tot=totCalcy(arr,opr);
+          getData("");
+          str+=oprs;
+
+        console.log(arr);
+        console.log(opr);
+        console.log(str);
+        break;
+        }
+        default : {
+          break;
+        }
+
+    }
     
+  }
+
+  
   return (
     <div className="App">
       <main>
@@ -32,13 +89,15 @@ function App() {
       <TabButton whenClick={()=>number("8")}>8</TabButton>
       <TabButton whenClick={()=>number("9")}>9</TabButton>
       <TabButton whenClick={()=>number("0")}>0</TabButton>
-      <TabButton  whenClick={()=>calcy('add')}>+</TabButton>
-      <TabButton whenClick={()=>calcy('sub')}>-</TabButton>
-      <TabButton whenClick={()=>calcy('div')}>/</TabButton>
-      <TabButton whenClick={()=>calcy('mul')}>*</TabButton>
+      <TabButton  whenClick={()=>calcy('+')}>+</TabButton>
+      <TabButton whenClick={()=>calcy('-')}>-</TabButton>
+      <TabButton whenClick={()=>calcy('/')}>/</TabButton>
+      <TabButton whenClick={()=>calcy('*')}>*</TabButton>
+      <TabButton whenClick={()=>calcy('=')}>=</TabButton>
       </main>
 
-      <h1>{data}</h1>
+      <h1>{str==="" ? 0 : str}</h1>
+      
     </div>
   );
 }
