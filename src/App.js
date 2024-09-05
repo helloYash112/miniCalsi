@@ -4,67 +4,132 @@ import './App.css';
 
 const arr=new Array();
 const opr=new Array();
-let str="";
+let tep="";
+let dis='';
 
 function App() {
   const[data,getData]=useState("");
+  const[check,udtCheck]=useState(undefined);
+  if(tep){
+    dis=tep;
+  }
+  else{
+    dis="0"
+  }
   
   function number(datas){
-      str+=datas;
-      getData(data+datas);
+        getData(data+datas);
+        tep+=datas;
   }
-  /*
+  
   function totCalcy(arrs,opr){
-    let count=0;
-    arrs.forEach(element => {
-      let nums
+    
+    let num1=Number(arrs[0]);
+    let num2=Number(arrs[1]);
+    let tot=0;
+
+    switch(opr){
+      case "+":{
+        tot=num1+num2;
+        break;
+
+      }
+      case "-":{
+        tot=num1-num2;
+        break;
+
+      }
+      case "*":{
+        tot=num1*num2;
+        break;
+
+      }
+      case "/":{
+        tot=num1/num2;
+        break;
+
+      }
       
-    });
+    }
+    
+    return tot;
   }
-    */
+    
   function calcy(oprs){
+    
     switch(oprs){
       case "+" :
         {
+          if(data){
            arr.push(data);
-          opr.push(oprs);
-          str+=oprs;
-          getData("");
+           udtCheck(oprs);
+           tep+=oprs;
+           getData("");
+          }
+           else
+           { 
+            udtCheck(oprs);
+            tep+=oprs;
+           }
           break;
         }
         case "-" :{
+          if(data){
           arr.push(data);
-          opr.push(oprs);
-          str+=oprs;
+          udtCheck(oprs);
+          tep+=oprs;
           getData("");
+          }
+          else{
+            udtCheck(oprs);
+            tep+=oprs;
+
+          }
           break;
 
         }
         case "*" :{
-          arr.push(data);
-          opr.push(oprs);
-          str+=oprs;
-          getData("");
-          break;
+          if(data){
+            arr.push(data);
+            udtCheck(oprs);
+            tep+=oprs;
+            getData("");
+            }
+            else{
+              udtCheck(oprs);
+              tep+=oprs;
+  
+            }
+            break;
 
         }
         case "/" :{
-          arr.push(data);
-          opr.push(oprs);
-          str+=oprs;
-          getData("");
+          if(data){
+            arr.push(data);
+            udtCheck(oprs);
+            tep+=oprs;
+            getData("");
+            }
+            else{
+              udtCheck(oprs);
+              tep+=oprs;
+  
+            }
           break;
 
         }
         case "=" :{
           arr.push(data);
-          //const tot=totCalcy(arr,opr);
+        
           getData("");
-          str+=oprs;
-
-        console.log(arr);
-        console.log(opr);
-        console.log(str);
+          tep+=oprs;
+          let out=totCalcy(arr,check);
+          udtCheck(undefined);
+          arr.pop();
+          arr.pop();
+          arr.push(out);
+         tep=out;
+      
         break;
         }
         default : {
@@ -78,7 +143,7 @@ function App() {
   
   return (
     <div className="App">
-      <main>
+      <main id='main'>
       <TabButton whenClick={()=>number("1")}>1</TabButton>
       <TabButton whenClick={()=>number("2")}>2</TabButton>
       <TabButton whenClick={()=>number("3")}>3</TabButton>
@@ -96,7 +161,8 @@ function App() {
       <TabButton whenClick={()=>calcy('=')}>=</TabButton>
       </main>
 
-      <h1>{str==="" ? 0 : str}</h1>
+      <h1>{dis}</h1>
+      
       
     </div>
   );
