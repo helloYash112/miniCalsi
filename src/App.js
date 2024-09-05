@@ -41,6 +41,10 @@ function App() {
       getData("");
 
   }
+  function common(oprs){
+    udtCheck(oprs);
+            tep+=oprs;
+  }
   function totCalcy(arrs,opr){
     
     let num1=Number(arrs[0]);
@@ -89,8 +93,7 @@ function App() {
          }
            else
            { 
-            udtCheck(oprs);
-            tep+=oprs;
+            common(oprs);
            }
           break;
         }
@@ -104,9 +107,7 @@ function App() {
          tep+=oprs;
             }
           else{
-            udtCheck(oprs);
-            tep+=oprs;
-
+           common(oprs);
           }
           break;
 
@@ -121,9 +122,7 @@ function App() {
          tep+=oprs;
               }
             else{
-              udtCheck(oprs);
-              tep+=oprs;
-  
+              common(oprs);
             }
             break;
 
@@ -138,9 +137,7 @@ function App() {
          tep+=oprs;
               }
             else{
-              udtCheck(oprs);
-              tep+=oprs;
-  
+             common(oprs);
             }
           break;
 
