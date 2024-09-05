@@ -1,5 +1,5 @@
 export default function TabButton({children,whenClick}){
-    return<>
-    <button onClick={whenClick}>{children}</button></>
+    return<ol>
+    <button onClick={whenClick}>{children}</button></ol>
 
 }
