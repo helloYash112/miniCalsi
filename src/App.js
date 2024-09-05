@@ -3,10 +3,9 @@ import {useState} from 'react'
 import './App.css';
 
 const arr=new Array();
-const opr=new Array();
+
 let tep="";
 let dis='';
-
 function App() {
   const[data,getData]=useState("");
   const[check,udtCheck]=useState(undefined);
@@ -21,7 +20,27 @@ function App() {
         getData(data+datas);
         tep+=datas;
   }
+  function commonRes(){
+    arr.push(data);
+    getData("");
   
+   let out=totCalcy(arr,check);
+   
+   udtCheck(undefined);
+   arr.pop();
+   arr.pop();
+   arr.push(out);
+  tep=out;
+
+  }
+  function commonData(oprs){
+   
+      arr.push(data);
+      udtCheck(oprs);
+      tep+=oprs;
+      getData("");
+
+  }
   function totCalcy(arrs,opr){
     
     let num1=Number(arrs[0]);
@@ -60,12 +79,12 @@ function App() {
     switch(oprs){
       case "+" :
         {
-          if(data){
-           arr.push(data);
-           udtCheck(oprs);
-           tep+=oprs;
-           getData("");
+          if(data && check===undefined){
+          commonData(oprs);
           }
+         else if(check){
+         commonRes();
+         }
            else
            { 
             udtCheck(oprs);
@@ -74,12 +93,12 @@ function App() {
           break;
         }
         case "-" :{
-          if(data){
-          arr.push(data);
-          udtCheck(oprs);
-          tep+=oprs;
-          getData("");
+          if(data && check===undefined){
+            commonData(oprs);
           }
+          else if(check){
+            commonRes();
+            }
           else{
             udtCheck(oprs);
             tep+=oprs;
@@ -89,12 +108,12 @@ function App() {
 
         }
         case "*" :{
-          if(data){
-            arr.push(data);
-            udtCheck(oprs);
-            tep+=oprs;
-            getData("");
+          if(data && check===undefined){
+            commonData(oprs);
             }
+            else if(check){
+              commonRes();
+              }
             else{
               udtCheck(oprs);
               tep+=oprs;
@@ -104,12 +123,12 @@ function App() {
 
         }
         case "/" :{
-          if(data){
-            arr.push(data);
-            udtCheck(oprs);
-            tep+=oprs;
-            getData("");
+          if(data && check===undefined){
+            commonData(oprs);
             }
+            else if(check){
+              commonRes();
+              }
             else{
               udtCheck(oprs);
               tep+=oprs;
@@ -119,17 +138,7 @@ function App() {
 
         }
         case "=" :{
-          arr.push(data);
-        
-          getData("");
-          tep+=oprs;
-          let out=totCalcy(arr,check);
-          udtCheck(undefined);
-          arr.pop();
-          arr.pop();
-          arr.push(out);
-         tep=out;
-      
+          commonRes();
         break;
         }
         default : {
@@ -161,8 +170,7 @@ function App() {
       <TabButton whenClick={()=>calcy('=')}>=</TabButton>
       </main>
 
-      <h1>{dis}</h1>
-      
+      <h1>{dis }</h1>
       
     </div>
   );
