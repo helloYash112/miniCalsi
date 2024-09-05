@@ -84,6 +84,8 @@ function App() {
           }
          else if(check){
          commonRes();
+         udtCheck(oprs);
+         tep+=oprs;
          }
            else
            { 
@@ -98,6 +100,8 @@ function App() {
           }
           else if(check){
             commonRes();
+            udtCheck(oprs);
+         tep+=oprs;
             }
           else{
             udtCheck(oprs);
@@ -113,6 +117,8 @@ function App() {
             }
             else if(check){
               commonRes();
+              udtCheck(oprs);
+         tep+=oprs;
               }
             else{
               udtCheck(oprs);
@@ -128,6 +134,8 @@ function App() {
             }
             else if(check){
               commonRes();
+              udtCheck(oprs);
+         tep+=oprs;
               }
             else{
               udtCheck(oprs);
