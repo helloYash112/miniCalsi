@@ -160,7 +160,8 @@ function App() {
   
   return (
     <div className="App">
-      <main id='main'>
+      <main className='App-header '>
+      <h1 className='res'>{dis }</h1>
       <TabButton  name={btnVal==='1' ? 'btn' :undefined} whenClick={()=>number("1")}>1</TabButton>
       <TabButton name={btnVal==='2' ? 'btn' :undefined} whenClick={()=>number("2")}>2</TabButton>
       <TabButton name={btnVal==='3' ? 'btn' :undefined} whenClick={()=>number("3")}>3</TabButton>
@@ -178,7 +179,7 @@ function App() {
       <TabButton name={btnVal==='=' ? 'btn' :undefined} whenClick={()=>calcy('=')}>=</TabButton>
       </main>
 
-      <h1>{dis }</h1>
+    
       
     </div>
   );
