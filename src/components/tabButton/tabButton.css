@@ -1,5 +1,13 @@
 .btn{
-    background-color: blueviolet;
+    padding: 5%;
+   margin-top: 2%;
+   margin-right: 2%;
+   margin-left: 2%;
+   margin-bottom: 2%;
+    background-attachment: fixed;
+    background-color:rgba(212, 35, 91, 0.418);
+    text-align: center;
+    color:black;
 }
 #btn1{
     padding: 5%;
