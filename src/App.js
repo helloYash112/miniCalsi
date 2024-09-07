@@ -162,21 +162,21 @@ function App() {
     <div className="App">
       <main className='App-header '>
       <h1 className='res'>{dis }</h1>
-      <TabButton  name={btnVal==='1' ? 'btn' :undefined} whenClick={()=>number("1")}>1</TabButton>
-      <TabButton name={btnVal==='2' ? 'btn' :undefined} whenClick={()=>number("2")}>2</TabButton>
-      <TabButton name={btnVal==='3' ? 'btn' :undefined} whenClick={()=>number("3")}>3</TabButton>
-      <TabButton name={btnVal==='4' ? 'btn' :undefined} whenClick={()=>number("4")}>4</TabButton>
-      <TabButton name={btnVal==='5' ? 'btn' :undefined} whenClick={()=>number("5")}>5</TabButton>
-      <TabButton name={btnVal==='6' ? 'btn' :undefined} whenClick={()=>number("6")}>6</TabButton>
-      <TabButton name={btnVal==='7' ? 'btn' :undefined} whenClick={()=>number("7")}>7</TabButton>
-      <TabButton name={btnVal==='8' ? 'btn' :undefined} whenClick={()=>number("8")}>8</TabButton>
-      <TabButton name={btnVal==='9' ? 'btn' :undefined} whenClick={()=>number("9")}>9</TabButton>
-      <TabButton name={btnVal==='0' ? 'btn' :undefined} whenClick={()=>number("0")}>0</TabButton>
-      <TabButton name={btnVal==='+' ? 'btn' :undefined} whenClick={()=>calcy('+')}>+</TabButton>
-      <TabButton name={btnVal==='-' ? 'btn' :undefined} whenClick={()=>calcy('-')}>-</TabButton>
-      <TabButton name={btnVal==='/' ? 'btn' :undefined} whenClick={()=>calcy('/')}>/</TabButton>
-      <TabButton name={btnVal==='*' ? 'btn' :undefined} whenClick={()=>calcy('*')}>*</TabButton>
-      <TabButton name={btnVal==='=' ? 'btn' :undefined} whenClick={()=>calcy('=')}>=</TabButton>
+      <TabButton  name={btnVal==='1' ? 'btn' :'btn1'} whenClick={()=>number("1")}>1</TabButton>
+      <TabButton name={btnVal==='2' ? 'btn' :'btn1'} whenClick={()=>number("2")}>2</TabButton>
+      <TabButton name={btnVal==='3' ? 'btn' :'btn1'} whenClick={()=>number("3")}>3</TabButton>
+      <TabButton name={btnVal==='4' ? 'btn' :'btn1'} whenClick={()=>number("4")}>4</TabButton>
+      <TabButton name={btnVal==='5' ? 'btn' :'btn1'} whenClick={()=>number("5")}>5</TabButton>
+      <TabButton name={btnVal==='6' ? 'btn' :'btn1'} whenClick={()=>number("6")}>6</TabButton>
+      <TabButton name={btnVal==='7' ? 'btn' :'btn1'} whenClick={()=>number("7")}>7</TabButton>
+      <TabButton name={btnVal==='8' ? 'btn' :'btn1'} whenClick={()=>number("8")}>8</TabButton>
+      <TabButton name={btnVal==='9' ? 'btn' :'btn1'} whenClick={()=>number("9")}>9</TabButton>
+      <TabButton name={btnVal==='0' ? 'btn' :'btn1'} whenClick={()=>number("0")}>0</TabButton>
+      <TabButton name={btnVal==='+' ? 'btn' :'btn1'} whenClick={()=>calcy('+')}>+</TabButton>
+      <TabButton name={btnVal==='-' ? 'btn' :'btn1'} whenClick={()=>calcy('-')}>-</TabButton>
+      <TabButton name={btnVal==='/' ? 'btn' :'btn1'} whenClick={()=>calcy('/')}>/</TabButton>
+      <TabButton name={btnVal==='*' ? 'btn' :'btn1'} whenClick={()=>calcy('*')}>*</TabButton>
+      <TabButton name={btnVal==='=' ? 'btn' :'btn1'} whenClick={()=>calcy('=')}>=</TabButton>
       </main>
 
     
