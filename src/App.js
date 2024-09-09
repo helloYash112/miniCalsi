@@ -177,6 +177,7 @@ function App() {
       <TabButton name={btnVal==='/' ? 'btn' :'btn1'} whenClick={()=>calcy('/')}>/</TabButton>
       <TabButton name={btnVal==='*' ? 'btn' :'btn1'} whenClick={()=>calcy('*')}>*</TabButton>
       <TabButton name={btnVal==='=' ? 'btn' :'btn1'} whenClick={()=>calcy('=')}>=</TabButton>
+      {console.log('team1')}
       </main>
 
     
